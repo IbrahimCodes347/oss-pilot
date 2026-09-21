@@ -1,0 +1,21 @@
+{
+  "schema": 2,
+  "updated_at": "2026-09-21T18:28:49",
+  "workflows": {
+    "yunaremaia/sandbox-ffi-layers#30": {
+      "repo": "yunaremaia/sandbox-ffi-layers",
+      "issue": 30,
+      "issue_title": "feat: add specific error messages for lockfile read failures",
+      "workflow_path": "workflows/yunaremaia-sandbox-ffi-layers/issue-30.json",
+      "conversation_dir": "conversations/yunaremaia-sandbox-ffi-layers/issue-30",
+      "workspace": "workspace/yunaremaia-sandbox-ffi-layers/issue-30",
+      "conversation_id": "20260921T182758-5d0afc2d",
+      "state": "PAUSED",
+      "status": "paused",
+      "branch": "fix-issue-30",
+      "pr_number": null,
+      "pr_url": null,
+      "updated_at": "2026-09-21T18:28:49"
+    }
+  }
+}

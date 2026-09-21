@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-21",
+  "attempted": {
+    "yunaremaia/sandbox-ffi-layers": [
+      30
+    ]
+  },
+  "lanes": {
+    "yunaremaia/sandbox-ffi-layers#30": {
+      "state": "PAUSED",
+      "pr": null,
+      "updated": "2026-09-21T18:28:49+00:00"
+    }
+  },
+  "last_tick": "2026-09-21T18:28:49+00:00"
+}
