@@ -18,7 +18,9 @@ GATES = DATA / "gates"
 BOARD = DATA / "board.json"
 FIXER = ROOT / "fixer"
 FIXER_SCRIPT = FIXER / "oss_agent_v2.py"
-LOG = DATA / "log.txt"
+# Each workflow logs to its OWN file (BEACON_LOG) so concurrent controller and
+# gate-poll runs never write the same path and trip git merge conflicts.
+LOG = Path(os.getenv("BEACON_LOG", str(DATA / "log.txt")))
 
 # Fixed Telegram API IPv4s, used only when DNS cannot resolve api.telegram.org
 # (broken ISP resolvers / NAT64-only networks). The API endpoints never move.

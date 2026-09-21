@@ -18,6 +18,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       GH_TOKEN: ${{ secrets.GH_PAT }}
+      BEACON_LOG: data/log-control.txt
       LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
       OMNIROUTE_BASE_URL: ${{ secrets.OMNIROUTE_BASE_URL }}
       OMNIROUTE_MODEL: ${{ secrets.OMNIROUTE_MODEL }}
@@ -30,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
-          fetch-depth: 1
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -39,9 +40,18 @@ jobs:
       - name: run a tick
         run: python beacon/tick.py
       - name: commit state
+        shell: bash
         run: |
-          git add -A data fixer/.agent_data || true
-          git -c user.name="${{ secrets.SIGNOFF_NAME }}" \
-              -c user.email="${{ secrets.SIGNOFF_EMAIL }}" \
-              commit -m "controller: $(date -u +%FT%TZ)" --allow-empty || true
-          git push
+          git config --global user.name "$SIGNOFF_NAME"
+          git config --global user.email "$SIGNOFF_EMAIL"
+          git add -A data fixer/.agent_data
+          git commit -m "controller: $(date -u +%FT%TZ)" --allow-empty || true
+          exit_code=1
+          for i in 1 2 3 4 5; do
+            git pull --no-rebase --no-edit origin master >/dev/null 2>&1 || true
+            git add -A data fixer/.agent_data
+            git commit -m "controller: $(date -u +%FT%TZ)" --allow-empty >/dev/null 2>&1 || true
+            if git push >/dev/null 2>&1; then exit_code=0; break; fi
+            sleep 6
+          done
+          exit $exit_code

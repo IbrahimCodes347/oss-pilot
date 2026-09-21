@@ -8,6 +8,7 @@ already has one of our open PRs) and lets the fixer make the final call.
 """
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import beacon_util as util  # noqa: E402
@@ -75,7 +76,7 @@ def find_candidate(conf: dict, board: dict) -> tuple | None:
 
         repo_labels = target.get("labels") or labels
         for label in repo_labels:
-            path = f"/repos/{repo_full}/issues?state=open&labels={label}"
+            path = f"/repos/{repo_full}/issues?state=open&labels={quote(label)}"
             issues = util.gh_paged(path)
             for issue in issues:
                 num = issue.get("number")
