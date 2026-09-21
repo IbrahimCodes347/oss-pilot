@@ -44,12 +44,12 @@ jobs:
         run: |
           git config --global user.name "$SIGNOFF_NAME"
           git config --global user.email "$SIGNOFF_EMAIL"
-          git add -A data fixer/.agent_data
+          git add -A
           git commit -m "controller: $(date -u +%FT%TZ)" --allow-empty || true
           exit_code=1
           for i in 1 2 3 4 5; do
             git pull --no-rebase --no-edit origin master >/dev/null 2>&1 || true
-            git add -A data fixer/.agent_data
+            git add -A
             git commit -m "controller: $(date -u +%FT%TZ)" --allow-empty >/dev/null 2>&1 || true
             if git push >/dev/null 2>&1; then exit_code=0; break; fi
             sleep 6
