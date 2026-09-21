@@ -21,3 +21,26 @@ Step 8a: running baseline tests (before any changes)...
  raise RuntimeError(
 RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
 2026-09-21T18:28:49+00:00  tick done
+2026-09-21T22:03:33+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#28
+2026-09-21T22:03:33+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 28 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-21T22:04:45+00:00  fixer exit=1
+--tail--
+ode: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+--- Attempt 1/8 ---
+⚠️ Combo 'gemini-2.0-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+💾 Saved state for yunaremaia/sandbox-ffi-layers#28 before exit (status: paused). Nothing on GitHub changed.
+   Resume with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --resume 28
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --conversation 28
+
+ raise RuntimeError(
+RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
+2026-09-21T22:04:45+00:00  tick done
