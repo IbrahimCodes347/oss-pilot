@@ -1,0 +1,58 @@
+{
+  "python": {
+    "markers": ["pyproject.toml", "requirements.txt", "setup.py"],
+    "extensions": [".py"],
+    "install_cmd": ["pip", "install", "-e", "."],
+    "test_cmd": "pytest",
+    "lint_cmd": "ruff check ."
+  },
+  "javascript": {
+    "markers": ["package.json"],
+    "extensions": [".js", ".jsx"],
+    "install_cmd": ["npm", "install"],
+    "test_cmd": "npm test",
+    "lint_cmd": "npx eslint ."
+  },
+  "typescript": {
+    "markers": ["tsconfig.json"],
+    "extensions": [".ts", ".tsx"],
+    "install_cmd": ["npm", "install"],
+    "test_cmd": "npm test",
+    "lint_cmd": "npx eslint ."
+  },
+  "java_maven": {
+    "markers": ["pom.xml"],
+    "extensions": [".java"],
+    "install_cmd": ["mvn", "install", "-DskipTests"],
+    "test_cmd": "mvn test",
+    "lint_cmd": null
+  },
+  "java_gradle": {
+    "markers": ["build.gradle", "build.gradle.kts"],
+    "extensions": [".java", ".kt"],
+    "install_cmd": ["gradle", "build", "-x", "test"],
+    "test_cmd": "gradle test",
+    "lint_cmd": null
+  },
+  "go": {
+    "markers": ["go.mod"],
+    "extensions": [".go"],
+    "install_cmd": ["go", "mod", "download"],
+    "test_cmd": "go test ./...",
+    "lint_cmd": null
+  },
+  "ruby": {
+    "markers": ["Gemfile"],
+    "extensions": [".rb"],
+    "install_cmd": ["bundle", "install"],
+    "test_cmd": "bundle exec rspec",
+    "lint_cmd": null
+  },
+  "rust": {
+    "markers": ["Cargo.toml"],
+    "extensions": [".rs"],
+    "install_cmd": ["cargo", "build"],
+    "test_cmd": "cargo test",
+    "lint_cmd": "cargo clippy"
+  }
+}

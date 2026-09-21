@@ -1,0 +1,33 @@
+name: gate-poll
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: poll gates
+        run: python beacon/gate_poller.py
+      - name: commit gate files
+        run: |
+          git add -A data || true
+          git -c user.name="${{ secrets.SIGNOFF_NAME }}" \
+              -c user.email="${{ secrets.SIGNOFF_EMAIL }}" \
+              commit -m "gate-poll: $(date -u +%FT%TZ)" --allow-empty || true
+          git push

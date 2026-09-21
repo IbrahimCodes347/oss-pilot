@@ -1,0 +1,5 @@
+# Runtime dependencies -- pinned to the versions currently in ./venv.
+PyGithub==2.10.0
+openai==3.3.1
+python-dotenv==1.2.3
+python-telegram-bot==21.6

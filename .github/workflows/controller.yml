@@ -1,0 +1,47 @@
+name: controller
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: controller
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      OMNIROUTE_BASE_URL: ${{ secrets.OMNIROUTE_BASE_URL }}
+      OMNIROUTE_MODEL: ${{ secrets.OMNIROUTE_MODEL }}
+      OMNIROUTE_MODEL_FALLBACKS: ${{ secrets.OMNIROUTE_MODEL_FALLBACKS }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      SIGNOFF_NAME: ${{ secrets.SIGNOFF_NAME }}
+      SIGNOFF_EMAIL: ${{ secrets.SIGNOFF_EMAIL }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install fixer dependencies
+        run: pip install -q -r fixer/requirements.txt
+      - name: run a tick
+        run: python beacon/tick.py
+      - name: commit state
+        run: |
+          git add -A data fixer/.agent_data || true
+          git -c user.name="${{ secrets.SIGNOFF_NAME }}" \
+              -c user.email="${{ secrets.SIGNOFF_EMAIL }}" \
+              commit -m "controller: $(date -u +%FT%TZ)" --allow-empty || true
+          git push

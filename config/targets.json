@@ -1,0 +1,10 @@
+{
+  "max_prs_per_day": 2,
+  "max_pending_gates": 3,
+  "default_labels": ["good first issue"],
+  "difficulty_cap": 2,
+  "max_stars": 3000,
+  "targets": [
+    { "repo": "yunaremaia/sandbox-ffi-layers", "labels": ["good first issue"], "enabled": true }
+  ]
+}
