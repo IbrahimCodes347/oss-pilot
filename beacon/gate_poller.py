@@ -110,32 +110,6 @@ def _handle_callback(query: dict) -> bool:
     return True
 
 
-def _dispatch_controller() -> None:
-    """The 1-minute beat maker hands a new decree to the controller so it is
-    consumed within minutes instead of waiting out GitHub's slow schedule."""
-    token = os.getenv("DISPATCH_TOKEN", "") or os.getenv("GITHUB_TOKEN", "")
-    if not token:
-        return
-    owner, _, repo = (os.getenv("DISPATCH_REPO", "IbrahimCodes347/oss-pilot")).partition("/")
-    url = (f"https://api.github.com/repos/{owner}/{repo}"
-           "/actions/workflows/controller.yml/dispatches")
-    body = json.dumps({"ref": "master"}).encode("utf-8")
-    req = urllib.request.Request(
-        url, data=body, method="POST",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json",
-            "Content-Type": "application/json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            util.log(f"dispatched controller (HTTP {resp.status})")
-    except Exception as exc:
-        util.log(f"dispatch controller failed: {exc}")
-
-
 def main() -> int:
     offset = util.load_json(OFFSET, {}).get("offset", 0)
     util.log(f"gate poller start (offset={offset})")
@@ -154,8 +128,6 @@ def main() -> int:
     if offset:
         util.save_json(OFFSET, {"offset": offset})
     util.log(f"gate poller done: {handled} decree(s), new offset={offset}")
-    if handled:
-        _dispatch_controller()
     return 0
 
 

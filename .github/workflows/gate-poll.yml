@@ -45,3 +45,9 @@ jobs:
             sleep 6
           done
           exit $exit_code
+      - name: wake controller after decree is on master
+        shell: bash
+        run: |
+          if find data/gates -name '*.decree' | grep -q .; then
+            python beacon/wake_controller.py
+          fi
