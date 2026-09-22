@@ -276,3 +276,49 @@ RuntimeError: Already have an active PR on yunaremaia/sandbox-ffi-layers. Wait f
    To allow 1+ open PRs in this same repo, set ALLOW_MULTI_PR_SAME_REPO=1 (the 2/day cap still applies).
 2026-09-22T12:57:33+00:00  decree yunaremaia-sandbox-ffi-layers_issue22_human still present: fixer did not reach the gate this run
 2026-09-22T12:57:33+00:00  tick done
+2026-09-22T12:59:28+00:00  gate poller start (offset=746150285)
+2026-09-22T12:59:36+00:00  gate poller done: 0 decree(s), new offset=746150285
+2026-09-22T12:59:36+00:00  APPLYING decree yunaremaia-sandbox-ffi-layers_issue22_human (yunaremaia/sandbox-ffi-layers#22, gate=human)
+2026-09-22T12:59:36+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 22 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T13:07:25+00:00  fixer exit=0
+--tail--
+Parser may not handle all fields correctly.");
++                    }
++                }
++            }
++            continue;
++        }
+         
+         if trimmed == "[[package]]" {
+             // Save previous if exists
+@@ -253,6 +265,44 @@ checksum = "f75b0e4b64c0b4e4e5b8f5a5a5c5d5e5f5a5b5c5d5e5f5a
+============================================================
+Test result summary: go_lock::tests::parse_cargo_lock_v4_format
+
+test result: FAILED. 1 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-22)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.34s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+error: test failed, to rerun pass `--bin sandbox-ffi`
+
+[human] decree consumed: APPROVE (outcome written)
+branch 'fix-issue-22' set up to track 'origin/fix-issue-22'.
+✅ Draft PR created (https://github.com/yunaremaia/sandbox-ffi-layers/pull/34).
+
+🔄 Draft PR #34 is parked in the review loop (state: WAITING_FOR_FEEDBACK). It will NOT auto-close.
+   Talk to the maintainer / process feedback with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 22 -conversation
+   That loop finalizes only after an explicit 'done'/'approved' signal AND a human approval gate.
+
+🛑 Draft PR is up -- shutting down here by design (nothing runs unattended).
+
+Switched to a new branch 'fix-issue-22'
+remote: 
+remote: Create a pull request for 'fix-issue-22' on GitHub by visiting:        
+remote:      https://github.com/IbrahimCodes347/sandbox-ffi-layers/pull/new/fix-issue-22        
+remote: 
+To https://github.com/IbrahimCodes347/sandbox-ffi-layers.git
+ * [new branch]      fix-issue-22 -> fix-issue-22
+2026-09-22T13:07:25+00:00  decree yunaremaia-sandbox-ffi-layers_issue22_human resolved: APPROVE
+2026-09-22T13:07:25+00:00  tick done
