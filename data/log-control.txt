@@ -259,3 +259,20 @@ To https://github.com/IbrahimCodes347/sandbox-ffi-layers.git
 2026-09-22T12:52:17+00:00  yunaremaia/sandbox-ffi-layers: skipping (we already have an open PR there)
 2026-09-22T12:52:17+00:00  no candidate found this tick
 2026-09-22T12:52:17+00:00  tick done
+2026-09-22T12:57:22+00:00  gate poller start (offset=746150285)
+2026-09-22T12:57:31+00:00  gate poller done: 0 decree(s), new offset=746150285
+2026-09-22T12:57:31+00:00  APPLYING decree yunaremaia-sandbox-ffi-layers_issue22_human (yunaremaia/sandbox-ffi-layers#22, gate=human)
+2026-09-22T12:57:31+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 22 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T12:57:33+00:00  fixer exit=1
+--tail--
+Full transcript being saved to: .agent_data/logs/yunaremaia-sandbox-ffi-layers_issue22_20260922_125732.log
+
+agent_v2.py", line 4679, in main
+    check_pr_limits(state, repo_name)
+  File "/home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py", line 450, in check_pr_limits
+    raise RuntimeError(
+RuntimeError: Already have an active PR on yunaremaia/sandbox-ffi-layers. Wait for it to close/merge.
+   Working on several issues at once is supported -- use DIFFERENT repos, which needs no override.
+   To allow 1+ open PRs in this same repo, set ALLOW_MULTI_PR_SAME_REPO=1 (the 2/day cap still applies).
+2026-09-22T12:57:33+00:00  decree yunaremaia-sandbox-ffi-layers_issue22_human still present: fixer did not reach the gate this run
+2026-09-22T12:57:33+00:00  tick done
