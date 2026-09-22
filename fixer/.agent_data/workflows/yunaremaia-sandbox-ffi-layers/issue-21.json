@@ -1,0 +1,103 @@
+{
+  "schema": 2,
+  "repo": "yunaremaia/sandbox-ffi-layers",
+  "issue": 21,
+  "issue_title": "[sandbox-ffi-layers] Add JSON output format for programmatic consumption",
+  "issue_url": "https://github.com/yunaremaia/sandbox-ffi-layers/issues/21",
+  "issue_state": "open",
+  "state": "WAITING_FOR_FEEDBACK",
+  "status": "waiting_for_review",
+  "branch": "fix-issue-21",
+  "base_branch": "main",
+  "pr_number": 33,
+  "pr_url": "https://github.com/yunaremaia/sandbox-ffi-layers/pull/33",
+  "created_at": "2026-09-22T10:10:32",
+  "updated_at": "2026-09-22T12:13:54",
+  "processed_comment_ids": [],
+  "iterations": [
+    {
+      "n": 1,
+      "timestamp": "2026-09-22T12:13:54",
+      "trigger": "initial",
+      "feedback": [],
+      "plan": "The change cleanly implements the requested JSON output mode, handles exit codes appropriately, suppresses logging when JSON output is active, and conforms to the specified schema without touching sensitive or unrelated code paths.",
+      "checklist": [],
+      "action_taken": "Initial fix passed on attempt 3.",
+      "tests_added": [],
+      "tests_result": "pass",
+      "fixed": "",
+      "unresolved": [],
+      "pr_state": "DRAFT_PR_CREATED"
+    }
+  ],
+  "unresolved_feedback": [],
+  "transitions": [
+    {
+      "from": "TASK_RECEIVED",
+      "to": "ANALYZING",
+      "at": "2026-09-22T10:10:33",
+      "note": "issue verified + unclaimed"
+    },
+    {
+      "from": "ANALYZING",
+      "to": "IMPLEMENTING",
+      "at": "2026-09-22T10:11:07",
+      "note": "generating fix"
+    },
+    {
+      "from": "IMPLEMENTING",
+      "to": "TESTING",
+      "at": "2026-09-22T10:15:47",
+      "note": "tests green"
+    },
+    {
+      "from": "TESTING",
+      "to": "IMPLEMENTING",
+      "at": "2026-09-22T12:12:19",
+      "note": "generating fix"
+    },
+    {
+      "from": "IMPLEMENTING",
+      "to": "TESTING",
+      "at": "2026-09-22T12:13:06",
+      "note": "tests green"
+    },
+    {
+      "from": "TESTING",
+      "to": "DRAFT_PR_CREATED",
+      "at": "2026-09-22T12:13:54",
+      "note": "draft PR opened"
+    },
+    {
+      "from": "DRAFT_PR_CREATED",
+      "to": "WAITING_FOR_FEEDBACK",
+      "at": "2026-09-22T12:13:54",
+      "note": "draft PR opened"
+    }
+  ],
+  "conversation_id": "20260922T101033-10a39f46",
+  "conversation_dir": "conversations/yunaremaia-sandbox-ffi-layers/issue-21",
+  "workspace": "workspace/yunaremaia-sandbox-ffi-layers/issue-21",
+  "provider": "omniroute",
+  "model": "gemini-3.6-flash",
+  "last_test_status": "",
+  "pause_count": 0,
+  "resume_count": 0,
+  "pause_history": [],
+  "labels": [
+    "enhancement",
+    "good first issue"
+  ],
+  "difficulty": "medium",
+  "vague": false,
+  "domain": "",
+  "classification": {
+    "kind": "GENERIC",
+    "scope": "MODERATE",
+    "difficulty": "medium",
+    "domain": "",
+    "task_type": "BUG_FIX",
+    "reason": "(model unavailable during classification)"
+  },
+  "bot_login": "IbrahimCodes347"
+}

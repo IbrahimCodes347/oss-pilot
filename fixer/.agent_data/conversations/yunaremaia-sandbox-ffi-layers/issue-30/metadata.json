@@ -1,0 +1,14 @@
+{
+  "conversation_id": "20260921T182758-5d0afc2d",
+  "repo": "yunaremaia/sandbox-ffi-layers",
+  "issue": 30,
+  "created_at": "2026-09-21T18:27:58",
+  "updated_at": "2026-09-21T18:28:49",
+  "provider": "omniroute",
+  "model": "gemini-2.0-flash",
+  "message_count": 5,
+  "rounds": 0,
+  "archived_conversation_ids": [],
+  "transcript": "conversations/yunaremaia-sandbox-ffi-layers/issue-30/transcript.log",
+  "messages": "conversations/yunaremaia-sandbox-ffi-layers/issue-30/messages.jsonl"
+}

@@ -1,0 +1,246 @@
+2026-09-21T18:27:50+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#30
+2026-09-21T18:27:50+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 30 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-21T18:28:49+00:00  fixer exit=1
+--tail--
+{'error': {'code': 404, 'message': 'models/auto is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?), using keyword matching only.
+✅ Found 6 relevant files (0 via AI selection, 6 via keyword match)
+Step 8a: running baseline tests (before any changes)...
+✅ Tests passed
+
+--- Attempt 1/5 ---
+⚠️ Combo 'gemini-2.0-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+💾 Saved state for yunaremaia/sandbox-ffi-layers#30 before exit (status: paused). Nothing on GitHub changed.
+   Resume with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --resume 30
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --conversation 30
+
+ raise RuntimeError(
+RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
+2026-09-21T18:28:49+00:00  tick done
+2026-09-21T22:03:33+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#28
+2026-09-21T22:03:33+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 28 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-21T22:04:45+00:00  fixer exit=1
+--tail--
+ode: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+--- Attempt 1/8 ---
+⚠️ Combo 'gemini-2.0-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+💾 Saved state for yunaremaia/sandbox-ffi-layers#28 before exit (status: paused). Nothing on GitHub changed.
+   Resume with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --resume 28
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --conversation 28
+
+ raise RuntimeError(
+RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
+2026-09-21T22:04:45+00:00  tick done
+2026-09-22T00:45:11+00:00  new day: resetting PR budget
+2026-09-22T00:45:13+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#25
+2026-09-22T00:45:13+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 25 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T00:46:12+00:00  fixer exit=1
+--tail--
+{'error': {'code': 404, 'message': 'models/auto is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?), using keyword matching only.
+✅ Found 4 relevant files (0 via AI selection, 4 via keyword match)
+Step 8a: running baseline tests (before any changes)...
+✅ Tests passed
+
+--- Attempt 1/5 ---
+⚠️ Combo 'gemini-2.0-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+💾 Saved state for yunaremaia/sandbox-ffi-layers#25 before exit (status: paused). Nothing on GitHub changed.
+   Resume with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --resume 25
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --conversation 25
+
+ raise RuntimeError(
+RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
+2026-09-22T00:46:12+00:00  tick done
+2026-09-22T05:26:12+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#23
+2026-09-22T05:26:12+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 23 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T05:27:20+00:00  fixer exit=1
+--tail--
+ode: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+--- Attempt 1/8 ---
+⚠️ Combo 'gemini-2.0-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and imp
+   Trying fallback combo 'gemini-1.5-flash' in 5s...
+⚠️ Combo 'gemini-1.5-flash' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the lis
+   Trying fallback combo 'gemini-2.0-flash-lite' in 10s...
+
+💾 Saved state for yunaremaia/sandbox-ffi-layers#23 before exit (status: paused). Nothing on GitHub changed.
+   Resume with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --resume 23
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --conversation 23
+
+ raise RuntimeError(
+RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
+2026-09-22T05:27:20+00:00  tick done
+2026-09-22T09:58:59+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#22
+2026-09-22T09:58:59+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 22 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T10:09:36+00:00  fixer exit=0
+--tail--
+back!("⚠️ Warning: Unknown Cargo.lock version: {v}");
++                    }
++                }
++            }
++        }
+         
+         if trimmed == "[[package]]" {
+             // Save previous if exists
+@@ -130,9 +142,20 @@ pub fn parse_cargo_lock(content: &str) -> anyhow::Result<Vec<Package>> {
+         });
+     }
+ 
++    let _ = lockfile_version;
+     Ok(packages)
+ }
+ 
++mod epiring {
++    #[macro_export]
++    macro_rules! eprintln_fallback {
++        ($($arg:tt)*) => {{
++            eprintln!($($arg)*);
++        }};
++    }
++    pub use eprintln_fallback;
++}
++
+ /// Build a set of known proc-macro crate names for heuristic detection.
+ pub fn known_proc_macro_crates() -> HashMap<String, String> {
+     let mut map = HashMap::new();
+@@ -182,13 +205,6 @@ fn looks_like_proc_macro(name: &str) -> bool {
+ }
+ 
+ /// Analyze packages and return tho
+============================================================
+Test result summary: go_lock::tests::parse_cargo_lock_v4_format
+
+test result: FAILED. 4 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-22)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+error: test failed, to rerun pass `--bin sandbox-ffi`
+
+
+🛑 Human gate parked in cloud mode -- waiting for a decree.
+
+Switched to a new branch 'fix-issue-22'
+2026-09-22T10:09:36+00:00  tick done
+2026-09-22T10:10:25+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#21
+2026-09-22T10:10:25+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 21 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T10:16:54+00:00  fixer exit=0
+--tail--
+"example-drift",
++      "severity": "warning",
++      "message": "Description of the finding",
++      "file": "path/to/file",
++      "line": 42,
++      "suggestion": "Optional fix suggestion"
++    }
++  ]
++}
++```
++
+ ## Status
+ 
+ **v0.1.0-alpha** — Cargo.lock parser + proc-macro detection + known-malicious blocklist.
+@@ -55,4 +85,4 @@ See [PROPOSAL.md](PROPOSAL.md) for full roadmap.
+ 
+ ## License
+ 
+-AGPL-3.0 — see [LICENSE](LICENSE).
++AGPL-3.0 — see [LICENSE](LICENSE).
+\ No newline at end of file
+diff --git a/src/cargo_lock.rs b/src/cargo_lock.rs
+index 44d74a5..10e0a51 100644
+--- a/src/cargo_lock.rs
++++ b/src/cargo_lock.rs
+@@ -159,7 +159,7 @@ pub fn known_proc_macro_crates() -> HashMap<String, String> {
+ }
+ 
+ /// Heuristic: detect if a crate name looks like a proc-macro crate.
+-fn looks_like_proc_macro(name: &str) -> bool {
++pub fn looks_like_pro
+============================================================
+Test result summary: ests::parse_cargo_lock_single_line_deps ... ok
+test tests::test_json_output_format_and_schema ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-21)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+
+
+🛑 Human gate parked in cloud mode -- waiting for a decree.
+
+Switched to a new branch 'fix-issue-21'
+2026-09-22T10:16:54+00:00  tick done
+2026-09-22T12:11:46+00:00  APPLYING decree yunaremaia-sandbox-ffi-layers_issue21_human (yunaremaia/sandbox-ffi-layers#21, gate=human)
+2026-09-22T12:11:46+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 21 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T12:13:55+00:00  fixer exit=0
+--tail--
+usize,
++    warnings: usize,
++    passed: usize,
++}
++
++#[derive(Serialize, Debug)]
++struct JsonResult {
++    id: String,
++    severity: String,
++    message: String,
++    file: String,
++    line: usize,
++    #[serde(skip_serializing_if = "Option::is_none")]
++    suggestion: Option<String>,
++}
++
++fn main() -
+============================================================
+Test result summary: ::parse_cargo_lock_single_line_deps ... ok
+test json_tests::test_json_output_schema_structure ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-21)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.23s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+
+[human] decree consumed: APPROVE (outcome written)
+branch 'fix-issue-21' set up to track 'origin/fix-issue-21'.
+✅ Draft PR created (https://github.com/yunaremaia/sandbox-ffi-layers/pull/33).
+
+🔄 Draft PR #33 is parked in the review loop (state: WAITING_FOR_FEEDBACK). It will NOT auto-close.
+   Talk to the maintainer / process feedback with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 21 -conversation
+   That loop finalizes only after an explicit 'done'/'approved' signal AND a human approval gate.
+
+🛑 Draft PR is up -- shutting down here by design (nothing runs unattended).
+
+Switched to a new branch 'fix-issue-21'
+remote: 
+remote: Create a pull request for 'fix-issue-21' on GitHub by visiting:        
+remote:      https://github.com/IbrahimCodes347/sandbox-ffi-layers/pull/new/fix-issue-21        
+remote: 
+To https://github.com/IbrahimCodes347/sandbox-ffi-layers.git
+ * [new branch]      fix-issue-21 -> fix-issue-21
+2026-09-22T12:13:55+00:00  decree yunaremaia-sandbox-ffi-layers_issue21_human resolved: APPROVE
+2026-09-22T12:13:55+00:00  tick done
