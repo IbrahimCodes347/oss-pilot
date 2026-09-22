@@ -113,7 +113,7 @@ def _handle_callback(query: dict) -> bool:
 def _dispatch_controller() -> None:
     """The 1-minute beat maker hands a new decree to the controller so it is
     consumed within minutes instead of waiting out GitHub's slow schedule."""
-    token = os.getenv("GITHUB_TOKEN", "")
+    token = os.getenv("DISPATCH_TOKEN", "") or os.getenv("GITHUB_TOKEN", "")
     if not token:
         return
     owner, _, repo = (os.getenv("DISPATCH_REPO", "IbrahimCodes347/oss-pilot")).partition("/")

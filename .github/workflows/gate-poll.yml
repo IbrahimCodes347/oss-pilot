@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  workflows: write
 
 jobs:
   poll:
@@ -19,6 +18,7 @@ jobs:
       BEACON_LOG: data/log-poll.txt
       SIGNOFF_NAME: ${{ secrets.SIGNOFF_NAME }}
       SIGNOFF_EMAIL: ${{ secrets.SIGNOFF_EMAIL }}
+      DISPATCH_TOKEN: ${{ secrets.GH_PAT }}
     steps:
       - uses: actions/checkout@v4
         with:
