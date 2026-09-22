@@ -3836,7 +3836,7 @@ FINAL STATUS: READY | READY WITH NOTES | NOT READY
 # ============================================================
 GATE_DIR = Path(os.getenv("GATE_DIR", str(AGENT_HOME / "gates")))
 GATE_ASYNC = os.getenv("GATE_ASYNC", "").strip().lower() in ("1", "true", "yes", "on")
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_BOT_TOKEN = os.getenv("MANUAL_BOT_TOKEN") or os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 if not TELEGRAM_CHAT_ID:
     _first_id = os.getenv("TELEGRAM_ALLOWED_IDS", "").strip()
