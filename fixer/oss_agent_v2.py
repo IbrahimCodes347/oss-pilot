@@ -7148,6 +7148,11 @@ def cli_main(argv=None, install_handlers: bool = True) -> int:
     invocation could not be resolved to a workflow, 3 the workspace belongs to a
     different workflow, 130 interrupted. Failures print recovery commands rather
     than a bare traceback."""
+    for _stream in (sys.stdout, sys.stderr):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass  # not a TextIOWrapper (e.g. a fake in the tests) -- leave it
     parser = build_parser()
     args = parser.parse_args(argv)
     selected = _selected_session_command(args)
