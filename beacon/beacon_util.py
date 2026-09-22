@@ -124,6 +124,10 @@ def env_for_fixer(extra=None) -> dict:
     env = dict(os.environ)
     env["GATE_ASYNC"] = "1"
     env["GATE_DIR"] = str(GATES)
+    # Every PR that reaches the create stage was explicitly approved by the
+    # operator (parked implicit gates are resumed by a decree), so piling
+    # several drafts in one repo is intentional. The 3/day cap still applies.
+    env["ALLOW_MULTI_PR_SAME_REPO"] = "1"
     if extra:
         env.update(extra)
     return env
