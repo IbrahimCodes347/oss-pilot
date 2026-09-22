@@ -1,0 +1,64 @@
+{
+  "schema": 2,
+  "repo": "yunaremaia/sandbox-ffi-layers",
+  "issue": 21,
+  "issue_title": "[sandbox-ffi-layers] Add JSON output format for programmatic consumption",
+  "issue_url": "https://github.com/yunaremaia/sandbox-ffi-layers/issues/21",
+  "issue_state": "open",
+  "state": "TESTING",
+  "status": "testing",
+  "branch": "fix-issue-21",
+  "base_branch": "main",
+  "pr_number": null,
+  "pr_url": null,
+  "created_at": "2026-09-22T10:10:32",
+  "updated_at": "2026-09-22T10:15:47",
+  "processed_comment_ids": [],
+  "iterations": [],
+  "unresolved_feedback": [],
+  "transitions": [
+    {
+      "from": "TASK_RECEIVED",
+      "to": "ANALYZING",
+      "at": "2026-09-22T10:10:33",
+      "note": "issue verified + unclaimed"
+    },
+    {
+      "from": "ANALYZING",
+      "to": "IMPLEMENTING",
+      "at": "2026-09-22T10:11:07",
+      "note": "generating fix"
+    },
+    {
+      "from": "IMPLEMENTING",
+      "to": "TESTING",
+      "at": "2026-09-22T10:15:47",
+      "note": "tests green"
+    }
+  ],
+  "conversation_id": "20260922T101033-10a39f46",
+  "conversation_dir": "conversations/yunaremaia-sandbox-ffi-layers/issue-21",
+  "workspace": "workspace/yunaremaia-sandbox-ffi-layers/issue-21",
+  "provider": "omniroute",
+  "model": "gemini-3.6-flash",
+  "last_test_status": "",
+  "pause_count": 0,
+  "resume_count": 0,
+  "pause_history": [],
+  "labels": [
+    "enhancement",
+    "good first issue"
+  ],
+  "difficulty": "medium",
+  "vague": false,
+  "domain": "",
+  "classification": {
+    "kind": "GENERIC",
+    "scope": "MODERATE",
+    "difficulty": "medium",
+    "domain": "",
+    "task_type": "BUG_FIX",
+    "reason": "(model unavailable during classification)"
+  },
+  "bot_login": "IbrahimCodes347"
+}

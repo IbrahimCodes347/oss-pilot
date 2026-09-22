@@ -1,0 +1,214 @@
+Full transcript being saved to: .agent_data/logs/yunaremaia-sandbox-ffi-layers_issue21_20260922_101026.log
+Step 1-2: checking #21 - [sandbox-ffi-layers] Add JSON output format for programmatic consumption
+⚠️ Combo 'auto/fast' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/auto/fast is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+   Trying fallback combo 'auto' in 5s...
+   ↳ classification unavailable (OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'models/auto is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?); assuming GENERIC/medium
+✅ Forked, cloned, branched: fix-issue-21
+   ↳ Detected language/build system: rust
+   ↳ Detected rust: cargo build
+   ↳ Overriding default test command with detected one: cargo test
+⚠️ Combo 'auto/fast' failed hard (NotFoundError): Error code: 404 - [{'error': {'code': 404, 'message': 'models/auto/fast is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+   Trying fallback combo 'auto' in 5s...
+   ↳ AI file selection unavailable (OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'models/auto is not found for API version v1main, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?), using keyword matching only.
+✅ Found 6 relevant files (0 via AI selection, 6 via keyword match)
+Step 8a: running baseline tests (before any changes)...
+✅ Tests passed
+
+--- Attempt 1/5 ---
+⚠️ Combo 'gemini-3.6-flash' failed hard (InternalServerError): Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+⚠️  You tried to rewrite 'README.md', which exists but wasn't in your context, so you were guessing at its content. Here is its ACTUAL current content -- redo the fix using this:
+
+# sandbox-ffi-layers
+
+> Runtime security gateway for AI coding agents building with native dependencies.
+
+`sandbox-ffi-layers` intercepts build commands executed by AI coding agents
+(Claude Code, Codex, OpenCode) and verifies native dependency supply chain
+before allowing `build.rs`, `proc-macro`, or CFFI execution.
+
+## Problem
+
+In August 2026, the Rust crate `arrayref@0.3.10` was compromised via a typosquat
+of `proc-macro2` called `proc-macro1`. The malicious `build.rs` downloaded and
+executed a remote payload during `cargo build`. Over 2,285 downloads before removal.
+
+**Existing tools fail because:**
+- `cargo audit` only checks known CVEs (new attacks have none)
+- Supply-chain scanners (Socket, Phylum) run post-installation
+- Agent sandboxes (Eclipse Enclave) don't inspect native build execution
+
+## Solution
+
+`sandbox-ffi-layers` is the first tool to unify:
+1. **Agent sandboxing** — intercepts build commands from AI agents
+2. **Supply-chain scanning** — checks deps against PhantomDB, OSV, RustSec
+3. **Native build detection** — identifies proc-macros, build.rs, CFFI
+4. **Runtime enforcement** — blocks BEFORE native code executes
+
+## Installation
+
+```bash
+cargo install --locked sandbox-ffi-layers
+```
+
+## Usage
+
+```bash
+# One-shot check of Cargo.lock
+sandbox-ffi --check --lockfile ./Cargo.lock
+
+# With SARIF output for GitHub Code Scanning
+sandbox-ffi --check --format sarif --output results.sarif
+
+# Fail on critical findings (CI/CD gate)
+sandbox-ffi --check --fail-critical
+
+# Watch mode (requires root, eBPF)
+sudo sandbox-ffi --watch
+```
+
+## Status
+
+**v0.1.0-alpha** — Cargo.lock parser + proc-macro detection + known-malicious blocklist.
+
+See [PROPOSAL.md](PROPOSAL.md) for full roadmap.
+
+## License
+
+AGPL-3.0 — see [LICENSE](LICENSE).
+
+
+--- Attempt 2/5 ---
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+✅ Applied changes to: ['src/cargo_lock.rs']
+🧪 Rejecting this patch before testing it: no regression test: the patch changes only src/cargo_lock.rs and adds no test that would fail without it
+
+--- Attempt 3/5 ---
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+✅ Applied changes to: ['src/main.rs', 'README.md']
+✅ Tests passed
+🧪 regression test added in src/main.rs
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+🚩 Supervisor flagged this fix: The provided diff is truncated in the middle of implementation (`format!("Proc-macro crate detected: {}@{}", surface.package.`), meaning the code will not compile. Furthermore, no unit tests were included in the diff despite being required by the acceptance criteria.
+   ↳ Retrying with that feedback instead of proceeding blindly.
+
+--- Attempt 4/5 ---
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+✅ Applied changes to: ['Cargo.toml', 'src/cargo_lock.rs']
+✅ Tests passed
+🧪 regression test added in Cargo.toml
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+🚩 Supervisor flagged this fix: The change pulls in a massive and disproportionate number of new indirect dependencies and transitives (like chrono, futures, wasm-bindgen, and cc) just to format a timestamp, which significantly bloats the dependency tree and build footprint for a simple CLI tool. Furthermore, adding heavy crates without using standard lightweight formatting or standard library approaches for timestamps in a sandbox-ffi-layers crate warrants a human review.
+   ↳ Retrying with that feedback instead of proceeding blindly.
+
+--- Attempt 5/5 ---
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+✅ Applied changes to: ['Cargo.toml', 'src/main.rs']
+✅ Tests passed
+🧪 regression test added in Cargo.toml
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+⚠️ Combo 'gemini-3.6-flash' failed hard (RateLimitError): Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/g
+   Trying fallback combo 'gemini-3.5-flash-lite' in 5s...
+   ↳ Claim comment posted (fix ready).
+
+============================================================
+PROPOSED CHANGES
+============================================================
+Diff stats: 4 files changed, 300 insertions(+), 45 deletions(-)
+🚩 Supervisor pre-review: FLAGGED -- The diff truncates abruptly in `src/main.rs` during the implementation of the core check logic, leaving the JSON output generation disconnected from actual scan findings and resulting in incomplete code.
+diff --git a/Cargo.toml b/Cargo.toml
+index 3efa4a0..9c8cd50 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -30,4 +30,4 @@ predicates = "3"
+ [profile.release]
+ strip = true
+ lto = true
+-codegen-units = 1
++codegen-units = 1
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 275ecea..8c11789 100644
+--- a/README.md
++++ b/README.md
+@@ -37,6 +37,9 @@ cargo install --locked sandbox-ffi-layers
+ # One-shot check of Cargo.lock
+ sandbox-ffi --check --lockfile ./Cargo.lock
+ 
++# JSON output mode for programmatic consumption
++sandbox-ffi --check --format json
++
+ # With SARIF output for GitHub Code Scanning
+ sandbox-ffi --check --format sarif --output results.sarif
+ 
+@@ -47,6 +50,33 @@ sandbox-ffi --check --fail-critical
+ sudo sandbox-ffi --watch
+ ```
+ 
++## JSON Output Schema
++
++When using `--json` or `--format json`, `sandbox-ffi` outputs a machine-readable JSON object to stdout adhering to the following stable schema:
++
++```json
++{
++  "version": "1.0.0",
++  "timestamp": "2026-09-18T12:00:00Z",
++  "summary": {
++    "total": 42,
++    "errors": 3,
++    "warnings": 12,
++    "passed": 27
++  },
++  "results": [
++    {
++      "id": "example-drift",
++      "severity": "warning",
++      "message": "Description of the finding",
++      "file": "path/to/file",
++      "line": 42,
++      "suggestion": "Optional fix suggestion"
++    }
++  ]
++}
++```
++
+ ## Status
+ 
+ **v0.1.0-alpha** — Cargo.lock parser + proc-macro detection + known-malicious blocklist.
+@@ -55,4 +85,4 @@ See [PROPOSAL.md](PROPOSAL.md) for full roadmap.
+ 
+ ## License
+ 
+-AGPL-3.0 — see [LICENSE](LICENSE).
++AGPL-3.0 — see [LICENSE](LICENSE).
+\ No newline at end of file
+diff --git a/src/cargo_lock.rs b/src/cargo_lock.rs
+index 44d74a5..10e0a51 100644
+--- a/src/cargo_lock.rs
++++ b/src/cargo_lock.rs
+@@ -159,7 +159,7 @@ pub fn known_proc_macro_crates() -> HashMap<String, String> {
+ }
+ 
+ /// Heuristic: detect if a crate name looks like a proc-macro crate.
+-fn looks_like_proc_macro(name: &str) -> bool {
++pub fn looks_like_pro
+============================================================
+Test result summary: ests::parse_cargo_lock_single_line_deps ... ok
+test tests::test_json_output_format_and_schema ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-21)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+
+
+🛑 Human gate parked in cloud mode -- waiting for a decree.

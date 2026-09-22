@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated_at": "2026-09-22T10:01:40",
+  "updated_at": "2026-09-22T10:15:47",
   "workflows": {
     "yunaremaia/sandbox-ffi-layers#30": {
       "repo": "yunaremaia/sandbox-ffi-layers",
@@ -76,6 +76,21 @@
       "pr_number": null,
       "pr_url": null,
       "updated_at": "2026-09-22T10:01:40"
+    },
+    "yunaremaia/sandbox-ffi-layers#21": {
+      "repo": "yunaremaia/sandbox-ffi-layers",
+      "issue": 21,
+      "issue_title": "[sandbox-ffi-layers] Add JSON output format for programmatic consumption",
+      "workflow_path": "workflows/yunaremaia-sandbox-ffi-layers/issue-21.json",
+      "conversation_dir": "conversations/yunaremaia-sandbox-ffi-layers/issue-21",
+      "workspace": "workspace/yunaremaia-sandbox-ffi-layers/issue-21",
+      "conversation_id": "20260922T101033-10a39f46",
+      "state": "TESTING",
+      "status": "testing",
+      "branch": "fix-issue-21",
+      "pr_number": null,
+      "pr_url": null,
+      "updated_at": "2026-09-22T10:15:47"
     }
   }
 }

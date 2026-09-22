@@ -143,3 +143,53 @@ error: test failed, to rerun pass `--bin sandbox-ffi`
 
 Switched to a new branch 'fix-issue-22'
 2026-09-22T10:09:36+00:00  tick done
+2026-09-22T10:10:25+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#21
+2026-09-22T10:10:25+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 21 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T10:16:54+00:00  fixer exit=0
+--tail--
+"example-drift",
++      "severity": "warning",
++      "message": "Description of the finding",
++      "file": "path/to/file",
++      "line": 42,
++      "suggestion": "Optional fix suggestion"
++    }
++  ]
++}
++```
++
+ ## Status
+ 
+ **v0.1.0-alpha** — Cargo.lock parser + proc-macro detection + known-malicious blocklist.
+@@ -55,4 +85,4 @@ See [PROPOSAL.md](PROPOSAL.md) for full roadmap.
+ 
+ ## License
+ 
+-AGPL-3.0 — see [LICENSE](LICENSE).
++AGPL-3.0 — see [LICENSE](LICENSE).
+\ No newline at end of file
+diff --git a/src/cargo_lock.rs b/src/cargo_lock.rs
+index 44d74a5..10e0a51 100644
+--- a/src/cargo_lock.rs
++++ b/src/cargo_lock.rs
+@@ -159,7 +159,7 @@ pub fn known_proc_macro_crates() -> HashMap<String, String> {
+ }
+ 
+ /// Heuristic: detect if a crate name looks like a proc-macro crate.
+-fn looks_like_proc_macro(name: &str) -> bool {
++pub fn looks_like_pro
+============================================================
+Test result summary: ests::parse_cargo_lock_single_line_deps ... ok
+test tests::test_json_output_format_and_schema ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-21)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+
+
+🛑 Human gate parked in cloud mode -- waiting for a decree.
+
+Switched to a new branch 'fix-issue-21'
+2026-09-22T10:16:54+00:00  tick done
