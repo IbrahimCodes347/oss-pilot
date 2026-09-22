@@ -193,3 +193,54 @@ test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 Switched to a new branch 'fix-issue-21'
 2026-09-22T10:16:54+00:00  tick done
+2026-09-22T12:11:46+00:00  APPLYING decree yunaremaia-sandbox-ffi-layers_issue21_human (yunaremaia/sandbox-ffi-layers#21, gate=human)
+2026-09-22T12:11:46+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 21 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T12:13:55+00:00  fixer exit=0
+--tail--
+usize,
++    warnings: usize,
++    passed: usize,
++}
++
++#[derive(Serialize, Debug)]
++struct JsonResult {
++    id: String,
++    severity: String,
++    message: String,
++    file: String,
++    line: usize,
++    #[serde(skip_serializing_if = "Option::is_none")]
++    suggestion: Option<String>,
++}
++
++fn main() -
+============================================================
+Test result summary: ::parse_cargo_lock_single_line_deps ... ok
+test json_tests::test_json_output_schema_structure ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-21)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.23s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+
+[human] decree consumed: APPROVE (outcome written)
+branch 'fix-issue-21' set up to track 'origin/fix-issue-21'.
+✅ Draft PR created (https://github.com/yunaremaia/sandbox-ffi-layers/pull/33).
+
+🔄 Draft PR #33 is parked in the review loop (state: WAITING_FOR_FEEDBACK). It will NOT auto-close.
+   Talk to the maintainer / process feedback with:
+      python oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 21 -conversation
+   That loop finalizes only after an explicit 'done'/'approved' signal AND a human approval gate.
+
+🛑 Draft PR is up -- shutting down here by design (nothing runs unattended).
+
+Switched to a new branch 'fix-issue-21'
+remote: 
+remote: Create a pull request for 'fix-issue-21' on GitHub by visiting:        
+remote:      https://github.com/IbrahimCodes347/sandbox-ffi-layers/pull/new/fix-issue-21        
+remote: 
+To https://github.com/IbrahimCodes347/sandbox-ffi-layers.git
+ * [new branch]      fix-issue-21 -> fix-issue-21
+2026-09-22T12:13:55+00:00  decree yunaremaia-sandbox-ffi-layers_issue21_human resolved: APPROVE
+2026-09-22T12:13:55+00:00  tick done

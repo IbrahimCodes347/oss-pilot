@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated_at": "2026-09-22T10:15:47",
+  "updated_at": "2026-09-22T12:13:54",
   "workflows": {
     "yunaremaia/sandbox-ffi-layers#30": {
       "repo": "yunaremaia/sandbox-ffi-layers",
@@ -85,12 +85,12 @@
       "conversation_dir": "conversations/yunaremaia-sandbox-ffi-layers/issue-21",
       "workspace": "workspace/yunaremaia-sandbox-ffi-layers/issue-21",
       "conversation_id": "20260922T101033-10a39f46",
-      "state": "TESTING",
-      "status": "testing",
+      "state": "WAITING_FOR_FEEDBACK",
+      "status": "waiting_for_review",
       "branch": "fix-issue-21",
-      "pr_number": null,
-      "pr_url": null,
-      "updated_at": "2026-09-22T10:15:47"
+      "pr_number": 33,
+      "pr_url": "https://github.com/yunaremaia/sandbox-ffi-layers/pull/33",
+      "updated_at": "2026-09-22T12:13:54"
     }
   }
 }
