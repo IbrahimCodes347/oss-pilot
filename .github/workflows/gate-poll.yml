@@ -19,6 +19,7 @@ jobs:
       SIGNOFF_NAME: ${{ secrets.SIGNOFF_NAME }}
       SIGNOFF_EMAIL: ${{ secrets.SIGNOFF_EMAIL }}
       DISPATCH_TOKEN: ${{ secrets.GH_PAT }}
+      DISPATCH_REPO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,8 +33,8 @@ jobs:
       - name: commit gate files
         shell: bash
         run: |
-          git config --global user.name "$SIGNOFF_NAME"
-          git config --global user.email "$SIGNOFF_EMAIL"
+          git config --global user.name "oss-relay[bot]"
+          git config --global user.email "oss-relay[bot]@users.noreply.github.com"
           git add -A
           git commit -m "gate-poll: $(date -u +%FT%TZ)" --allow-empty || true
           exit_code=1

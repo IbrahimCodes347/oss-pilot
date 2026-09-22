@@ -44,5 +44,8 @@ def dispatch(owner: str, repo: str, workflow: str, ref: str) -> int:
 
 
 if __name__ == "__main__":
-    owner, _, repo = (os.getenv("DISPATCH_REPO", "IbrahimCodes347/oss-pilot")).partition("/")
+    owner, _, repo = (os.getenv("DISPATCH_REPO", "")).partition("/")
+    if not owner or not repo:
+        util.log("wake: DISPATCH_REPO not set; nothing to dispatch")
+        sys.exit(0)
     sys.exit(dispatch(owner, repo, "controller.yml", "master"))
