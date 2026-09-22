@@ -1,9 +1,12 @@
 {
-  "date": "2026-09-21",
+  "date": "2026-09-22",
+  "prs_today": 0,
+  "prs": [],
   "attempted": {
     "yunaremaia/sandbox-ffi-layers": [
       30,
-      28
+      28,
+      25
     ]
   },
   "lanes": {
@@ -16,7 +19,12 @@
       "state": "PAUSED",
       "pr": null,
       "updated": "2026-09-21T22:04:45+00:00"
+    },
+    "yunaremaia/sandbox-ffi-layers#25": {
+      "state": "PAUSED",
+      "pr": null,
+      "updated": "2026-09-22T00:46:12+00:00"
     }
   },
-  "last_tick": "2026-09-21T22:04:45+00:00"
+  "last_tick": "2026-09-22T00:46:12+00:00"
 }
