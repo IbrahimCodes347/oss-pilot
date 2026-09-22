@@ -91,3 +91,55 @@ ode: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-fla
  raise RuntimeError(
 RuntimeError: OmniRoute call failed (Error code: 404 - [{'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.', 'status': 'NOT_FOUND'}}]). Is 'omniroute' running in another terminal, and do you have at least one provider connected in its dashboard at http://localhost:20128/dashboard?
 2026-09-22T05:27:20+00:00  tick done
+2026-09-22T09:58:59+00:00  HUNTING: trying yunaremaia/sandbox-ffi-layers#22
+2026-09-22T09:58:59+00:00  fixer: /opt/hostedtoolcache/Python/3.12.14/x64/bin/python /home/runner/work/oss-pilot/oss-pilot/fixer/oss_agent_v2.py --repo yunaremaia/sandbox-ffi-layers --issue 22 --gate-sync  (cwd=/home/runner/work/oss-pilot/oss-pilot/fixer)
+2026-09-22T10:09:36+00:00  fixer exit=0
+--tail--
+back!("⚠️ Warning: Unknown Cargo.lock version: {v}");
++                    }
++                }
++            }
++        }
+         
+         if trimmed == "[[package]]" {
+             // Save previous if exists
+@@ -130,9 +142,20 @@ pub fn parse_cargo_lock(content: &str) -> anyhow::Result<Vec<Package>> {
+         });
+     }
+ 
++    let _ = lockfile_version;
+     Ok(packages)
+ }
+ 
++mod epiring {
++    #[macro_export]
++    macro_rules! eprintln_fallback {
++        ($($arg:tt)*) => {{
++            eprintln!($($arg)*);
++        }};
++    }
++    pub use eprintln_fallback;
++}
++
+ /// Build a set of known proc-macro crate names for heuristic detection.
+ pub fn known_proc_macro_crates() -> HashMap<String, String> {
+     let mut map = HashMap::new();
+@@ -182,13 +205,6 @@ fn looks_like_proc_macro(name: &str) -> bool {
+ }
+ 
+ /// Analyze packages and return tho
+============================================================
+Test result summary: go_lock::tests::parse_cargo_lock_v4_format
+
+test result: FAILED. 4 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling sandbox-ffi-layers v0.1.0 (/home/runner/work/oss-pilot/oss-pilot/fixer/.agent_data/workspace/yunaremaia-sandbox-ffi-layers/issue-22)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running unittests src/main.rs (target/debug/deps/sandbox_ffi-c74b4b023f72ead8)
+error: test failed, to rerun pass `--bin sandbox-ffi`
+
+
+🛑 Human gate parked in cloud mode -- waiting for a decree.
+
+Switched to a new branch 'fix-issue-22'
+2026-09-22T10:09:36+00:00  tick done

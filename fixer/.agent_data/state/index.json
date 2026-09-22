@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated_at": "2026-09-22T05:27:20",
+  "updated_at": "2026-09-22T10:01:40",
   "workflows": {
     "yunaremaia/sandbox-ffi-layers#30": {
       "repo": "yunaremaia/sandbox-ffi-layers",
@@ -61,6 +61,21 @@
       "pr_number": null,
       "pr_url": null,
       "updated_at": "2026-09-22T05:27:20"
+    },
+    "yunaremaia/sandbox-ffi-layers#22": {
+      "repo": "yunaremaia/sandbox-ffi-layers",
+      "issue": 22,
+      "issue_title": "security: Cargo.lock v4 format silently ignored by parser",
+      "workflow_path": "workflows/yunaremaia-sandbox-ffi-layers/issue-22.json",
+      "conversation_dir": "conversations/yunaremaia-sandbox-ffi-layers/issue-22",
+      "workspace": "workspace/yunaremaia-sandbox-ffi-layers/issue-22",
+      "conversation_id": "20260922T095907-55626542",
+      "state": "TESTING",
+      "status": "testing",
+      "branch": "fix-issue-22",
+      "pr_number": null,
+      "pr_url": null,
+      "updated_at": "2026-09-22T10:01:40"
     }
   }
 }
