@@ -10,3 +10,6 @@
 2026-09-22T10:07:24+00:00  gate poller done: 0 decree(s), new offset=0
 2026-09-22T10:14:47+00:00  gate poller start (offset=0)
 2026-09-22T10:14:55+00:00  gate poller done: 0 decree(s), new offset=0
+2026-09-22T12:09:47+00:00  gate poller start (offset=0)
+2026-09-22T12:09:47+00:00  decree written: yunaremaia/sandbox-ffi-layers#21 (human) -> APPROVE
+2026-09-22T12:09:58+00:00  gate poller done: 1 decree(s), new offset=746150277
