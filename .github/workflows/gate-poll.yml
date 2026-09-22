@@ -2,6 +2,7 @@ name: gate-poll
 on:
   schedule:
     - cron: "*/5 * * * *"
+    - cron: "3-59/5 * * * *"
   workflow_dispatch:
 
 permissions:

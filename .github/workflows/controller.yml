@@ -2,6 +2,7 @@ name: controller
 on:
   schedule:
     - cron: "*/10 * * * *"
+    - cron: "2-59/10 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -37,6 +38,8 @@ jobs:
           python-version: "3.12"
       - name: install fixer dependencies
         run: pip install -q -r fixer/requirements.txt
+      - name: poll gates
+        run: python beacon/gate_poller.py
       - name: run a tick
         run: python beacon/tick.py
       - name: commit state
