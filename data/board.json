@@ -1,24 +1,7 @@
 {
-  "date": "2026-09-22",
-  "prs_today": 2,
-  "prs": [
-    {
-      "repo": "yunaremaia/sandbox-ffi-layers",
-      "issue": 21,
-      "gate": "human",
-      "pr": 33,
-      "url": "https://github.com/yunaremaia/sandbox-ffi-layers/pull/33",
-      "time": "2026-09-22T12:13:55+00:00"
-    },
-    {
-      "repo": "yunaremaia/sandbox-ffi-layers",
-      "issue": 22,
-      "gate": "human",
-      "pr": 34,
-      "url": "https://github.com/yunaremaia/sandbox-ffi-layers/pull/34",
-      "time": "2026-09-22T13:07:25+00:00"
-    }
-  ],
+  "date": "2026-09-23",
+  "prs_today": 0,
+  "prs": [],
   "attempted": {
     "yunaremaia/sandbox-ffi-layers": [
       30,
@@ -65,5 +48,5 @@
       "updated": "2026-09-22T12:13:55+00:00"
     }
   },
-  "last_tick": "2026-09-22T23:48:08+00:00"
+  "last_tick": "2026-09-23T01:22:14+00:00"
 }
